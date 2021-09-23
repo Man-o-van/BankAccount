@@ -1,0 +1,40 @@
+
+public class BankAccount {
+    String customerId;
+    String accountId;
+	double amount;
+	double balance=900;//or any default value
+	
+	
+	public double DepositAmount(double amount) {
+		
+		if(amount>balance)
+			return -1;
+		else
+		  {
+		   this.amount =amount;
+		   balance+=amount;
+		   return balance;
+		  }
+		
+	}
+
+	public double WithdrawAmount(double amount) {
+		if(amount>balance)
+			return -1;
+		else 
+		  {
+		   this.amount =amount;
+		   balance-=amount;
+		   return balance;
+		  }
+	}
+
+	public double AddInterest(double percent) {
+		 
+		balance+=amount*percent/100;
+		return balance;
+		
+	}
+
+}
