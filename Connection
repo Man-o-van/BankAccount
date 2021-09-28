@@ -1,0 +1,95 @@
+
+public class Connection
+
+{
+
+	String connid;
+
+	String customerid;
+
+	String customerEmail;
+
+	double balance;
+
+	
+
+	public Connection(String connid,String customerid,String customerEmail,double balance)
+
+	{
+
+		this.connid=connid;
+
+		this.customerid=customerid;
+
+		this.customerEmail=customerEmail;
+
+		this.balance=balance;
+
+	}
+
+}
+
+
+
+public class ConnectionDemo
+
+{
+
+
+
+	public static void main(String[] args)
+
+	{
+
+		Connection con[]=new Connection[5];
+
+		ref[0]=new Connection("9565","Drake","rake@gmail.com",1000);
+
+		ref[1]=new Connection("4894","Jordan","ordan1@gmail.com",8000);
+
+		ref[2]=new Connection("5555","John","John@gmail.com",111000);
+
+                ref[3]=new Connection("1566","Joe","Joe@gmail.com",12000);
+                
+                ref[4]=new Connection("5862","Jhai","jhai@gmail.com",80000);
+
+
+		String check_customer="John";
+
+		System.out.println(getAverageBalance(con,check_customer));
+
+	}
+
+	public static double getAverageBalance(Connection con[], String check_customer)
+
+	{
+
+		int i;
+
+		double average=0;
+
+		int count=0;
+
+		for(i=0;i<3;i++)
+
+		{
+
+			if(con[i].customerid.equals(check_customer))
+
+			{
+
+				count=count+1;
+
+				average=average+con[i].balance;
+
+			}
+
+		}
+
+		System.out.print("average balance of customer with customerid :"+check_customer+" is ");
+
+		return average/count;
+
+	}
+
+}
